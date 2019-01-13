@@ -5,13 +5,13 @@ page  = requests.get("http://questions.menstrupedia.com")
 data = BeautifulSoup(page.content, "html.parser")
 textContent = []
 
-Ques = data.findAll(class_="question-summary-wrapper")
+Questions = data.findAll(class_="question-summary-wrapper")
 
 c=0
-for i in Ques:
+for i in Questions:
 	c+=1
-	Q = i.find("h2").get_text()
-	print(str(c)+". "+str(Q))
+	Ques = i.find("h2").get_text()
+	print(str(c)+". "+str(Ques))
 	h = i.find("a")
 	print(h["title"]+"\n")
 	print("---------------------------------------------------------------------------------------")
